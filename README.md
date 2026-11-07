@@ -1,18 +1,10 @@
 # Smooth Demat (AiT add-on)
 
-Personal add-on for Adventures in Time (AIT Forger), Forge 1.20.1. Not for sharing.
+Keeps AiT's dematerialisation animation (`pulsating_demat`) exactly as it is, except for the very
+end. In the original the fade drops to a faint level (0.15), holds there, then falls to nothing,
+which looks like the TARDIS just vanishes. Here the final seconds (8.0s to 9.25s) keep fading with
+the same pulsing rhythm and ease out to zero. Everything before 8.0s is identical to the original,
+and the remat animation is untouched.
 
-Replaces the default dematerialisation animation (AiT's `pulsating_demat`) with a smoother one.
-
-What was wrong: the original fade drops to a faint level, holds there, then falls to nothing in
-the last second, and its flicker is made of only a few jumpy keyframes, so the ending looks like
-the TARDIS just vanishes.
-
-What this does: same length and same start (it stays solid for the first 1.5 seconds, so the demat
-sound and the take-off still line up). After that it fades along a smooth curve that eases out and
-reaches zero gently at the very end, with soft pulses that swell and then die away before the end
-instead of cutting off. The materialisation animation is left exactly as it was.
-
-It is a data replacement only (no code): `data/ait/fx/animation/keyframes/pulsating.animation.json`.
-The mod loads after AiT so its file wins. Other demat animations (classic, drill and so on) are
-untouched. Remove the mod to go back to the original.
+It is a data-only override (no code), so `mods.toml` loads it AFTER `ait`. If it ever looks unchanged,
+check that load order.
