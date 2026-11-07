@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "smoothdemat"
+version = "1.0.0"
+displayName = "Smooth Demat"
+description = '''
+Add-on for Adventures in Time (AIT Forger). Replaces the default (pulsating) dematerialisation animation with a smoother one that fades out gently instead of dropping away at the end.
+'''
+
+[[dependencies.smoothdemat]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.smoothdemat]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.21)"
+ordering = "NONE"
+side = "BOTH"
+
+# AFTER ait so this mod's files win when both provide the same animation.
+[[dependencies.smoothdemat]]
+modId = "ait"
+mandatory = true
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
